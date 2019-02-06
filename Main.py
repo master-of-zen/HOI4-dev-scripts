@@ -7,14 +7,21 @@ import Settings
 all_loc = list()
 all_id = list()
 
+
+def get_key_line(file, key, start_f, end_f):
+    lines = []
+    for line in file:
+        if key in line:
+            lines.append(line[line.find(start_f):line.find(end_f)].strip())
+    return lines
+
+
 def find_all_loc():
     loc = list()
     for root, dirs, files in os.walk(Settings.loc_path):
         for name in files:
             f = open(os.path.join(root, name), 'r')
-            for line in f:
-                    if ":0" in line:
-                        loc.append(line[:line.find(":0")].strip())
+            loc.extend(get_key_line(f, ":0", "", ":0"))
     return list(set(loc))
 
 
