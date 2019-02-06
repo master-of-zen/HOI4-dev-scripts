@@ -30,9 +30,7 @@ def find_idea_items(path):
     for root, dirs, files in os.walk(path):
         for name in files:
             f = open(os.path.join(root, name), 'r')
-            for line in f:
-                if "= {\n" in line:
-                    l.append(line[:line.find("=")].strip())
+            l.extend(get_key_line(f, "= {\n", "", "="))
     return list(set(l))
 
 
@@ -59,8 +57,12 @@ all_id.extend(find_idea_items(Settings.idea_path))
 def out_print(list1, list2):
     return list(set(list1).difference(list2))
 
-with open('output.txt', 'w') as f:
-    for item in sorted(out_print(all_id, all_loc)):
-        f.write("%s\n" % item)
+
+def print_resoults(list1, list2):
+    with open('output.txt', 'w') as f:
+        for item in sorted(out_print(list1, list2)):
+            f.write("%s\n" % item)
     f.close()
 
+
+print_resoults(all_id, all_loc)
