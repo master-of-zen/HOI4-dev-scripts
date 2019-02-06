@@ -58,11 +58,11 @@ def out_print(list1, list2):
     return list(set(list1).difference(list2))
 
 
-def print_resoults(list1, list2):
+def print_results(list1, list2):
     with open('output.txt', 'w') as f:
         for item in sorted(out_print(list1, list2)):
             f.write("%s\n" % item)
     f.close()
 
 
-print_resoults(all_id, all_loc)
+print_results(all_id, all_loc)
