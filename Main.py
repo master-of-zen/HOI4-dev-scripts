@@ -4,9 +4,6 @@ Code checker for HOI4 mods
 import os
 import Settings
 
-all_loc = list()
-all_id = list()
-
 
 def get_key_line(file, key, start_f, end_f):
     lines = []
