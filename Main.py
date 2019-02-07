@@ -49,20 +49,25 @@ def find_all_events_id():
     return loc
 
 
-all_loc.extend(find_all_loc())
-all_id.extend(find_all_events_id())
-all_id.extend(find_idea_items(Settings.idea_path))
-
-
 def out_print(list1, list2):
     return list(set(list1).difference(list2))
 
 
 def print_results(list1, list2):
-    with open('output.txt', 'w') as f:
+    with open('output.txt', 'a') as f:
         for item in sorted(out_print(list1, list2)):
             f.write("%s\n" % item)
     f.close()
 
 
-print_results(all_id, all_loc)
+def pretty_print():
+    open('output.txt', 'w')
+    with open('output.txt', 'a') as f:
+        f.write("All Events with missing localisation :" + "\n" * 10)
+    print_results(find_all_events_id(), find_all_loc())
+    with open('output.txt', 'a') as f:
+        f.write("\n" * 10 + "All ideas with missing localisation :" + "\n" * 10)
+    print_results(find_idea_items(Settings.idea_path), find_all_loc())
+
+
+pretty_print()
