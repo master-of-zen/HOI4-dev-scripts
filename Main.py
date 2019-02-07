@@ -1,6 +1,7 @@
 """
 Code checker for HOI4 mods
 """
+
 import os
 import Settings
 
@@ -13,28 +14,28 @@ def get_key_line(file, key, start_f, end_f):
     return lines
 
 
-def find_all_loc():
-    loc = list()
-    for root, dirs, files in os.walk(Settings.loc_path):
-        for name in files:
-            f = open(os.path.join(root, name), 'r')
-            loc.extend(get_key_line(f, ":0", "", ":0"))
-    return list(set(loc))
-
-
-def find_idea_items(path):
-    items = list()
+def walk_over_folder(path, key, start_f, end_f, lines):
     for root, dirs, files in os.walk(path):
         for name in files:
-            f = open(os.path.join(root, name), 'r')
-            items.extend(get_key_line(f, "= {\n", "", "="))
+            file = open(os.path.join(root, name), 'r')
+            lines.extend(get_key_line(file, key, start_f, end_f))
+
+
+def find_all_loc(path):
+    items = []
+    walk_over_folder(path, ":0", "", ":0", items)
     return list(set(items))
 
 
-def find_all_events_id():
+def find_idea_items(path):
+    items = []
+    walk_over_folder(path, "= {\n", "", "=", items)
+    return list(set(items))
 
+
+def find_all_events_id(path):
     loc = list()
-    for root, dirs, files in os.walk(Settings.event_path):
+    for root, dirs, files in os.walk(path):
         for name in files:
             f = open(os.path.join(root, name), 'r')
             for line in f:
@@ -49,8 +50,9 @@ def out_print(list1, list2):
     return list(set(list1).difference(list2))
 
 
-def print_results(list1, list2):
+def print_results(list1, list2, start):
     with open('output.txt', 'a') as f:
+        f.write(start)
         for item in sorted(out_print(list1, list2)):
             f.write("%s\n" % item)
     f.close()
@@ -58,12 +60,8 @@ def print_results(list1, list2):
 
 def pretty_print():
     open('output.txt', 'w')
-    with open('output.txt', 'a') as f:
-        f.write("All Events with missing localisation :" + "\n" * 10)
-    print_results(find_all_events_id(), find_all_loc())
-    with open('output.txt', 'a') as f:
-        f.write("\n" * 10 + "All ideas with missing localisation :" + "\n" * 10)
-    print_results(find_idea_items(Settings.idea_path), find_all_loc())
+    print_results(find_all_events_id(Settings.event_path), find_all_loc(Settings.loc_path), Settings.events_print)
+    print_results(find_idea_items(Settings.idea_path), find_all_loc(Settings.loc_path), Settings.ideas_print)
 
 
 pretty_print()
