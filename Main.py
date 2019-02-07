@@ -26,12 +26,12 @@ def find_all_loc():
 
 
 def find_idea_items(path):
-    l = list()
+    items = list()
     for root, dirs, files in os.walk(path):
         for name in files:
             f = open(os.path.join(root, name), 'r')
-            l.extend(get_key_line(f, "= {\n", "", "="))
-    return list(set(l))
+            items.extend(get_key_line(f, "= {\n", "", "="))
+    return list(set(items))
 
 
 def find_all_events_id():
