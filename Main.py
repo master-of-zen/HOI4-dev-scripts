@@ -32,15 +32,14 @@ def find_idea_items(path):
 
 
 def find_all_events_id():
-    strings = ("name", "desc", "title")
-    forbidden = ("{", "}", "/", '"')
+
     loc = list()
     for root, dirs, files in os.walk(Settings.event_path):
         for name in files:
             f = open(os.path.join(root, name), 'r')
             for line in f:
-                if any(s in line for s in strings):
-                    if not any(s in line for s in forbidden):
+                if any(s in line for s in Settings.strings):
+                    if not any(s in line for s in Settings.forbidden):
                         if line[line.find("=")+1:line.find("#")].strip() != "":
                             loc.append(line[line.find("=")+1:line.find("#")].strip())
     return loc
