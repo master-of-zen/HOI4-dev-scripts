@@ -14,22 +14,14 @@ def get_key_line(file, key, start_f, end_f):
     return lines
 
 
-def get_lines(path):
+def walk_over_files(path):
     for root, dirs, files in os.walk(path):
         for name in files:
-            f = open(os.path.join(root, name), 'r')
-            for line in f:
-                yield line
-
-
-def get_key(key, start_f, end_f):
-    pass
+            yield open(os.path.join(root, name), 'r')
 
 
 def walk_over_folder(path, key, start_f, end_f, lines):
-    for root, dirs, files in os.walk(path):
-        for name in files:
-            file = open(os.path.join(root, name), 'r')
+    for file in walk_over_files(path):
             lines.extend(get_key_line(file, key, start_f, end_f))
 
 
@@ -45,18 +37,13 @@ def find_idea_items(path):
     return list(set(items))
 
 
-
-
-
 def hard_find(path, loc):
-    for root, dirs, files in os.walk(path):
-        for name in files:
-            f = open(os.path.join(root, name), 'r')
-            for line in f:
-                if any(s in line for s in Settings.strings):
-                    if not any(s in line for s in Settings.forbidden):
-                        if line[line.find("=")+1:line.find("#")].strip() != "":
-                            loc.append(line[line.find("=")+1:line.find("#")].strip())
+    for f in walk_over_files(path):
+        for line in f:
+            if any(s in line for s in Settings.strings):
+                if not any(s in line for s in Settings.forbidden):
+                    if line[line.find("=")+1:line.find("#")].strip() != "":
+                        loc.append(line[line.find("=")+1:line.find("#")].strip())
 
 
 def find_all_events_id(path):
