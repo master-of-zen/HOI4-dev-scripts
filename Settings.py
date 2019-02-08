@@ -15,5 +15,5 @@ forbidden = ("{", "}", "/", '"')
 
 """Prints"""
 
-events_print = "All Events with missing localisation :" + "\n" * 10
-ideas_print = "\n" * 10 + "All ideas with missing localisation :" + "\n" * 10
+events_print = "All Events with missing localisation :" + "\n" * 5
+ideas_print = "\n" * 5 + "All ideas with missing localisation :" + "\n" * 5
