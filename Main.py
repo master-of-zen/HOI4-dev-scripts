@@ -2,26 +2,18 @@
 Code checker for HOI4 mods
 """
 
-import os
-import Settings
-
+import settings
+import parse
 
 def get_key_line(file, key, start_f, end_f):
     lines = []
-    for line in file:
-        if key in line:
-            lines.append(line[line.find(start_f):line.find(end_f)].strip())
+    for line in parse.have_key(file, key):
+        lines.append(line[line.find(start_f):line.find(end_f)].strip())
     return lines
 
 
-def walk_over_files(path):
-    for root, dirs, files in os.walk(path):
-        for name in files:
-            yield open(os.path.join(root, name), 'r')
-
-
 def walk_over_folder(path, key, start_f, end_f, lines):
-    for file in walk_over_files(path):
+    for file in parse.file_walk(path):
             lines.extend(get_key_line(file, key, start_f, end_f))
 
 
@@ -38,10 +30,10 @@ def find_idea_items(path):
 
 
 def hard_find(path, loc):
-    for f in walk_over_files(path):
+    for f in parse.file_walk(path):
         for line in f:
-            if any(s in line for s in Settings.strings):
-                if not any(s in line for s in Settings.forbidden):
+            if any(s in line for s in settings.strings):
+                if not any(s in line for s in settings.forbidden):
                     if line[line.find("=")+1:line.find("#")].strip() != "":
                         loc.append(line[line.find("=")+1:line.find("#")].strip())
 
@@ -66,8 +58,8 @@ def print_results(list1, list2, start):
 
 def pretty_print():
     open('output.txt', 'w')
-    print_results(find_all_events_id(Settings.event_path), find_all_loc(Settings.loc_path), Settings.events_print)
-    print_results(find_idea_items(Settings.idea_path), find_all_loc(Settings.loc_path), Settings.ideas_print)
+    print_results(find_all_events_id(settings.event_path), find_all_loc(settings.loc_path), settings.events_print)
+    print_results(find_idea_items(settings.idea_path), find_all_loc(settings.loc_path), settings.ideas_print)
 
 
 pretty_print()
