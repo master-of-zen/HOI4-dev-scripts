@@ -13,6 +13,7 @@ loc_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Bla
 
 strings = ("name", "desc", "title")
 forbidden = ("{", "}", "/", '"')
+date_key = ("date <", "date >")
 
 """Prints"""
 
