@@ -1,37 +1,45 @@
 """Conversion of dates"""
-
 import fileinput
 import datetime
 import settings
-import parse
+import os
 
-
-class TimeObj:
-
-    start = datetime.datetime(1936, 1, 1)
+start = datetime.date(1936, 1, 1)
 
 
 def get_days(dt):
-    return (TimeObj.start - dt).days
+    return (dt - start).days
 
 
 def line_is_valid(line, key):
+    line = line[:line.find("#")]
     if any(s in line for s in key):
         return True
     return False
 
 
-def cut_key(line):
-    return line[line.find("1"):line.find("#")].strip()
+def cut_date(line):
+    ln = line[line.find("1"):line.find("#")].strip()
+    return datetime.datetime.strptime(ln, "%Y.%m.%d").date()
 
 
 def valid_line(line):
-    pass
+    ln_dt = cut_date(line)
+    days = get_days(ln_dt)
+    return "\t\t\tcheck_variable = { global.days_passed > %d }" % days + " # " + str(ln_dt)
 
+def file_walk(path):
+    for root, dirs, files in os.walk(path):
+        for name in files:
+            yield os.path.join(root, name)
 
-def replace_all_date():
-    for file in parse.file_walk(settings.event_path):
-        for line in fileinput.input(file, inplace=True):
+def do_all_shit():
+    for file in file_walk(settings.test_path):
+        for line in fileinput.input(file, inplace=True, backup = None):
             if line_is_valid(line, settings.date_key):
                 print(valid_line(line))
+            else:
+                print(line, end='')
 
+
+do_all_shit()
