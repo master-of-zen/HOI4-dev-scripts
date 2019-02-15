@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Code checker.iml" filepath="$PROJECT_DIR$/.idea/Code checker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BICE.iml" filepath="$PROJECT_DIR$/.idea/BICE.iml" />
     </modules>
   </component>
 </project>

@@ -3,11 +3,6 @@ All Events with missing localisation :
 
 
 
-
-
-
-
-
 11483
 575
 AC_ai_event
@@ -353,8 +348,6 @@ france.65.t
 free_license
 generic
 germany.118.d
-germany.279.a
-germany.279.desc
 germany.292.b
 germany.315.desc
 germany.349.c
@@ -1477,17 +1470,7 @@ yugoslavia.9.c
 
 
 
-
-
-
-
-
 All ideas with missing localisation :
-
-
-
-
-
 
 
 
@@ -1496,7 +1479,6 @@ All ideas with missing localisation :
 #			ai_will_do
 #			allowed
 #			available
-#			equipment_bonus
 #			modifier
 #			research_bonus
 #		IRQ_hamdi_al_pachachi
@@ -2324,7 +2306,6 @@ cancel
 capital_scope
 capital_ship
 charles_tillon
-chinese_faction
 colonial_empire_lost
 communism_banned
 conservatism_influence
@@ -2414,7 +2395,6 @@ hidden_trigger
 idea_plan_z
 ideas
 if
-infantrygun_equipment
 interceptor_equipment
 jacques_duclos
 jacques_duclos_interior

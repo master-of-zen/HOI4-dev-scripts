@@ -7,15 +7,15 @@ File for all literals
 idea_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/common/ideas"
 event_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/events/"
 loc_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/localisation/"
-
+units_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/common/units"
 test_path = "/home/max/PycharmProjects/bice_grenight_code_check/test"
-
+equipment_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/common/units/equipment"
 """Strings"""
 
 strings = ("name", "desc", "title")
-forbidden = ("{", "}", "/", '"')
+forbidden = ("{", "}", "/", '"', "has")
 date_key = ("date <", "date >")
-
+ignore = ("equipments", "upgrades", "resources", "type", "can_convert_from")
 
 """Prints"""
 
