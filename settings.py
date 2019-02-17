@@ -15,8 +15,9 @@ equipment_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/m
 strings = ("name", "desc", "title")
 forbidden = ("{", "}", "/", '"', "has")
 date_key = ("date <", "date >")
-ignore = ("equipments", "upgrades", "resources", "type", "can_convert_from", "categories", "need", "sub_units")
-terrains = ("jungle", "forest", "marsh", "urban", "fort", "river", "amphibious")
+ignore = {"equipments", "upgrades", "resources", "type", "can_convert_from", "categories", "need", "sub_units", "#"}
+terrains = {"jungle", "forest", "marsh", "urban", "fort", "river", "amphibious", 'desert', 'capital', 'hills', 'plains',
+            'densecity', 'mountain'}
 
 """Prints"""
 
