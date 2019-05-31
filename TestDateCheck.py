@@ -18,7 +18,6 @@ class TestDateCheck(unittest.TestCase):
         self.assertEqual(False, tc)
 
 
-
 if __name__ == '__main__':
     unittest.main()
 

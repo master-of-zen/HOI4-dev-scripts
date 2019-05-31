@@ -4,12 +4,11 @@ File for all literals
 
 """Paths"""
 
-idea_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/common/ideas"
-event_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/events/"
-loc_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/localisation/"
-units_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/common/units"
-test_path = "/home/max/PycharmProjects/bice_grenight_code_check/test"
-equipment_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Blackice-hoi4/common/units/equipment"
+idea_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/blackice_v4.0common/ideas"
+event_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/blackice_v4.0events/"
+loc_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/blackice_v4.0localisation/"
+units_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/blackice_v4.0/common/units"
+equipment_path = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/blackice_v4.0/common/units/equipment"
 """Strings"""
 
 strings = ("name", "desc", "title")

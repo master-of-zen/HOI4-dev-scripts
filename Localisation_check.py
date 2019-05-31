@@ -2,8 +2,9 @@
 BICE for HOI4 mods
 """
 
-import settings
+import settings as st
 import parse_lib
+
 
 def get_key_line(file, key, start_f, end_f):
     lines = []
@@ -32,8 +33,8 @@ def find_idea_items(path):
 def hard_find(path, loc):
     for f in parse_lib.file_walk(path):
         for line in f:
-            if any(s in line for s in settings.strings):
-                if not any(s in line for s in settings.forbidden):
+            if any(s in line for s in st.strings):
+                if not any(s in line for s in st.forbidden):
                     if line[line.find("=")+1:line.find("#")].strip() != "":
                         loc.append(line[line.find("=")+1:line.find("#")].strip())
 
@@ -58,8 +59,8 @@ def print_results(list1, list2, start):
 
 def pretty_print():
     open('output.txt', 'w')
-    print_results(find_all_events_id(settings.event_path), find_all_loc(settings.loc_path), settings.events_print)
-    print_results(find_idea_items(settings.idea_path), find_all_loc(settings.loc_path), settings.ideas_print)
+    print_results(find_all_events_id(st.event_path), find_all_loc(st.loc_path), st.events_print)
+    print_results(find_idea_items(st.idea_path), find_all_loc(st.loc_path), st.ideas_print)
 
 
 pretty_print()
