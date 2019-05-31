@@ -3,18 +3,18 @@ BICE for HOI4 mods
 """
 
 import settings as st
-import parse_lib
+from parse_lib import have_key, file_walk
 
 
 def get_key_line(file, key, start_f, end_f):
     lines = []
-    for line in parse_lib.have_key(file, key):
+    for line in have_key(file, key):
         lines.append(line[line.find(start_f):line.find(end_f)].strip())
     return lines
 
 
 def walk_over_folder(path, key, start_f, end_f, lines):
-    for file in parse_lib.file_walk(path):
+    for file in file_walk(path):
             lines.extend(get_key_line(file, key, start_f, end_f))
 
 
@@ -31,7 +31,7 @@ def find_idea_items(path):
 
 
 def hard_find(path, loc):
-    for f in parse_lib.file_walk(path):
+    for f in file_walk(path):
         for line in f:
             if any(s in line for s in st.strings):
                 if not any(s in line for s in st.forbidden):

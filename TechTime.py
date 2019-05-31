@@ -1,7 +1,6 @@
 import os
 from time import time
-tech_placement = "/home/max/.local/share/Paradox Interactive/Hearts of Iron IV/mod/blackice_v4.0/common/technologies"
-tech_vanilla_placement = "/home/max/.local/share/Steam/steamapps/common/Hearts of Iron IV/common/technologies"
+from settings import tech_placement, tech_vanilla_placement
 
 time1 = time()
 

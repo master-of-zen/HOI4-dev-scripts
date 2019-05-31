@@ -5,6 +5,7 @@ Code checker for HOI4 mods
 import settings
 import parse
 
+
 def get_key_line(file, key, start_f, end_f):
     lines = []
     for line in parse.have_key(file, key):

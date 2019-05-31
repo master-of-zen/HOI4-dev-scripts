@@ -1,10 +1,10 @@
 import parse_lib
-import settings
+from settings import units_path, terrains, ignore
 
 with open("terrain_mod.txt", "w+") as f:
-    for file in parse_lib.file_walk(settings.units_path):
+    for file in parse_lib.file_walk(units_path):
         fl = str(file)
-        f.write("\n"+ fl[fl.find("s/")+ 2:fl.find(".txt")] + "\n\n")
+        f.write("\n"+ fl[fl.find("s/") + 2:fl.find(".txt")] + "\n\n")
         do_print = False
         for line in file:
             line = line[:line.find("#")]
@@ -12,11 +12,11 @@ with open("terrain_mod.txt", "w+") as f:
                 f.write("\t" + line.strip() + "\n")
             elif "}" in line:
                 do_print = False
-            if any(s in line for s in settings.terrains):
+            if any(s in line for s in terrains):
                 do_print = True
-            if not any(s in line for s in settings.ignore):
+            if not any(s in line for s in ignore):
                 if "= {" in line:
-                    if not any(s in line for s in settings.terrains):
+                    if not any(s in line for s in terrains):
                         f.write("\n#" + line[:line.find("=")].strip() + "\n")
                     else:
                         f.write("\n" + line[:line.find("=")].strip() + "\n")

@@ -1,7 +1,7 @@
 """Conversion of dates"""
 import fileinput
 import datetime
-import settings
+from settings import forbidden, event_path, date_key
 import os
 
 start = datetime.date(1936, 1, 1)
@@ -14,7 +14,7 @@ def get_days(dt):
 def line_is_valid(line, key):
     line = line[:line.find("#")]
     if any(s in line for s in key):
-        if not any(s in line for s in settings.forbidden):
+        if not any(s in line for s in forbidden):
             return True
     return False
 
@@ -38,9 +38,9 @@ def file_walk(path):
 
 
 def do_all_shit():
-    for file in file_walk(settings.event_path):
+    for file in file_walk(event_path):
         for line in fileinput.input(file, inplace=True, backup = None):
-            if line_is_valid(line, settings.date_key):
+            if line_is_valid(line, date_key):
                 print(valid_line(line))
             else:
                 print(line, end='')
