@@ -23,7 +23,7 @@ def sum_all_time(time_list):
     return sum
 
 
-def find_bice_time():
+def f_tech_time():
     all_bice_time = list()
     all_bice_time.extend(find_all_tech_time(tech_placement))
     all_bice_time = list(filter(None, all_bice_time))
@@ -37,19 +37,13 @@ def find_vanila_time():
     return int(sum_all_time(all_vanila_time))
 
 
-def find_coefficient():
-    a = find_bice_time()
-    b = find_vanila_time()
-    c = a/b
-    return c
-
-
 def print_results():
     print("\n" * 1)
-    print("All bice tech time: %d" % (find_bice_time()))
+    print("All bice tech time: %d" % (f_tech_time()))
     print("All vanila tech time: %d" % (find_vanila_time()))
-    print("Coefficient : %f" % find_coefficient())
     print(time() - time1)
 
-print_results()
+
+if __name__ == '__main__':
+    print_results()
 

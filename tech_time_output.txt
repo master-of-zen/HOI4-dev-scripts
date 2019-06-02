@@ -1,64 +1,6 @@
-Coefficient 3.3404255319148937
+All tech time 3768
 
-All Bice time 3768
-
-Bice Tech times per file
-253 = industry.txt
-189 = land_doctrine.txt
-163 = electronic_mechanical_engineering.txt
-152 = ENG_naval_surface_fleet.txt
-122 = JAP_naval_surface_fleet.txt
-115 = naval.txt
-114 = GER_air.txt
-113 = MTG_naval_techs.txt
-105 = MTG_naval.txt
-100 = GER_armor.txt
-100 = USA_air.txt
-96 = ww1_land_doctrine.txt
-96 = air_techs.txt
-92 = ITA_naval_surface_fleet.txt
-91 = USA_armor.txt
-91 = infantry.txt
-90 = naval_doctrine.txt
-90 = ITA_air.txt
-90 = SOV_naval_surface_fleet.txt
-85 = GER_naval_surface_fleet.txt
-82 = ENG_air.txt
-78 = armor.txt
-78 = air_doctrine.txt
-76 = JAP_air.txt
-74 = SOV_armor.txt
-74 = armor_axis.txt
-71 = FRA_naval_surface_fleet.txt
-70 = SOV_air.txt
-64 = FRA_armor.txt
-62 = USA_naval.txt
-59 = armor_techs.txt
-57 = ENG_armor.txt
-55 = GER_naval_sub.txt
-48 = JAP_naval_sub.txt
-46 = _hidden.txt
-44 = JAP_armor.txt
-43 = artillery.txt
-38 = ENG_naval_sub.txt
-38 = support.txt
-36 = ITA_naval_sub.txt
-35 = FRA_air.txt
-34 = ITA_armor.txt
-30 = SOV_naval_sub.txt
-30 = USA_naval_sub.txt
-27 = naval_techs.txt
-23 = FRA_naval_sub.txt
-20 = MINOR_b_air.txt
-14 = HUN_armor.txt
-10 = POL_armor.txt
-5 = MINOR_a_air.txt
-
-All Vanila time 1128
-
-Vanila Tech times per file
-
-
+Tech times per file
 274 = land_doctrine.txt
 143 = MTG_naval.txt
 135 = naval_doctrine.txt
