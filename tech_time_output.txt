@@ -1,69 +1,73 @@
 Coefficient 3.3404255319148937
+
 All Bice time 3768
+
 Bice Tech times per file
-('industry.txt', 252.77)
-('land_doctrine.txt', 189.02)
-('electronic_mechanical_engineering.txt', 163.47)
-('ENG_naval_surface_fleet.txt', 151.5)
-('JAP_naval_surface_fleet.txt', 121.5)
-('naval.txt', 115.0)
-('GER_air.txt', 114.3)
-('MTG_naval_techs.txt', 113.4)
-('MTG_naval.txt', 104.75)
-('GER_armor.txt', 100.5)
-('USA_air.txt', 100.0)
-('ww1_land_doctrine.txt', 95.5)
-('air_techs.txt', 95.5)
-('ITA_naval_surface_fleet.txt', 92.0)
-('USA_armor.txt', 90.7)
-('infantry.txt', 90.55)
-('SOV_naval_surface_fleet.txt', 90.5)
-('naval_doctrine.txt', 90.0)
-('ITA_air.txt', 89.75)
-('GER_naval_surface_fleet.txt', 85.5)
-('ENG_air.txt', 82.2)
-('air_doctrine.txt', 78.5)
-('armor.txt', 77.5)
-('JAP_air.txt', 75.5)
-('armor_axis.txt', 74.0)
-('SOV_armor.txt', 73.5)
-('FRA_naval_surface_fleet.txt', 71.0)
-('SOV_air.txt', 69.75)
-('FRA_armor.txt', 63.5)
-('USA_naval.txt', 62.0)
-('armor_techs.txt', 59.42)
-('ENG_armor.txt', 57.0)
-('GER_naval_sub.txt', 54.85)
-('JAP_naval_sub.txt', 48.0)
-('_hidden.txt', 46.0)
-('JAP_armor.txt', 44.5)
-('artillery.txt', 42.9)
-('support.txt', 38.05)
-('ENG_naval_sub.txt', 38.0)
-('ITA_naval_sub.txt', 36.5)
-('FRA_air.txt', 35.0)
-('ITA_armor.txt', 34.5)
-('SOV_naval_sub.txt', 30.5)
-('USA_naval_sub.txt', 29.5)
-('naval_techs.txt', 27.25)
-('FRA_naval_sub.txt', 23.0)
-('MINOR_b_air.txt', 20.0)
-('HUN_armor.txt', 14.5)
-('POL_armor.txt', 10.0)
-('MINOR_a_air.txt', 5.0)
+253 = industry.txt
+189 = land_doctrine.txt
+163 = electronic_mechanical_engineering.txt
+152 = ENG_naval_surface_fleet.txt
+122 = JAP_naval_surface_fleet.txt
+115 = naval.txt
+114 = GER_air.txt
+113 = MTG_naval_techs.txt
+105 = MTG_naval.txt
+100 = GER_armor.txt
+100 = USA_air.txt
+96 = ww1_land_doctrine.txt
+96 = air_techs.txt
+92 = ITA_naval_surface_fleet.txt
+91 = USA_armor.txt
+91 = infantry.txt
+90 = naval_doctrine.txt
+90 = ITA_air.txt
+90 = SOV_naval_surface_fleet.txt
+85 = GER_naval_surface_fleet.txt
+82 = ENG_air.txt
+78 = armor.txt
+78 = air_doctrine.txt
+76 = JAP_air.txt
+74 = SOV_armor.txt
+74 = armor_axis.txt
+71 = FRA_naval_surface_fleet.txt
+70 = SOV_air.txt
+64 = FRA_armor.txt
+62 = USA_naval.txt
+59 = armor_techs.txt
+57 = ENG_armor.txt
+55 = GER_naval_sub.txt
+48 = JAP_naval_sub.txt
+46 = _hidden.txt
+44 = JAP_armor.txt
+43 = artillery.txt
+38 = ENG_naval_sub.txt
+38 = support.txt
+36 = ITA_naval_sub.txt
+35 = FRA_air.txt
+34 = ITA_armor.txt
+30 = SOV_naval_sub.txt
+30 = USA_naval_sub.txt
+27 = naval_techs.txt
+23 = FRA_naval_sub.txt
+20 = MINOR_b_air.txt
+14 = HUN_armor.txt
+10 = POL_armor.txt
+5 = MINOR_a_air.txt
 
 All Vanila time 1128
+
 Vanila Tech times per file
 
-('land_doctrine.txt', 274.5)
-('MTG_naval.txt', 142.9)
-('naval_doctrine.txt', 135.0)
-('air_doctrine.txt', 117.75)
-('industry.txt', 86.0)
-('infantry.txt', 71.5)
-('air_techs.txt', 61.5)
-('naval.txt', 59.0)
-('electronic_mechanical_engineering.txt', 59.0)
-('armor.txt', 46.5)
-('support.txt', 46.5)
-('artillery.txt', 28.0)
+
+274 = land_doctrine.txt
+143 = MTG_naval.txt
+135 = naval_doctrine.txt
+118 = air_doctrine.txt
+86 = industry.txt
+72 = infantry.txt
+62 = air_techs.txt
+59 = naval.txt
+59 = electronic_mechanical_engineering.txt
+46 = armor.txt
+46 = support.txt
+28 = artillery.txt
