@@ -1,8 +1,9 @@
 """Conversion of dates"""
 import fileinput
 import datetime
-from settings import forbidden, event_path
 import os
+from settings import bice_path
+_forbidden = ("{", "}", "/", '"', "has")
 
 start = datetime.date(1936, 1, 1)
 date_key = ("date <", "date >")
@@ -15,7 +16,7 @@ def get_days(dt):
 def line_is_valid(line, key):
     line = line[:line.find("#")]
     if any(s in line for s in key):
-        if not any(s in line for s in forbidden):
+        if not any(s in line for s in _forbidden):
             return True
     return False
 
@@ -39,6 +40,7 @@ def file_walk(path):
 
 
 def do_all_shit(path):
+    path = os.path.join(path, 'events')
     for file in file_walk(path):
         for line in fileinput.input(file, inplace=True, backup=None):
             if line_is_valid(line, date_key):
@@ -48,4 +50,4 @@ def do_all_shit(path):
 
 
 if __name__ == '__main__':
-    do_all_shit(event_path)
+    do_all_shit(bice_path)

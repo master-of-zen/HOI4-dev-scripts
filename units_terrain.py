@@ -12,11 +12,11 @@ def unit_terrain_modifiers(path):
     with open("terrain_mod.txt", "w+") as f:
         for file in file_walk(path):
             fl = str(file)
-            f.write("\n"+ fl[fl.find("s/") + 2:fl.find(".txt")] + "\n\n")
+            f.write("\n" + fl[fl.find("s/") + 2:fl.find(".txt")] + "\n\n")
             do_print = False
             for line in file:
                 line = line[:line.find("#")]
-                if "}" not in line and do_print == True:
+                if "}" not in line and do_print:
                     f.write("\t" + line.strip() + "\n")
                 elif "}" in line:
                     do_print = False

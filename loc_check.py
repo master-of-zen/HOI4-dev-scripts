@@ -2,10 +2,12 @@
 BICE for HOI4 mods
 """
 import os
-from settings import strings, forbidden, bice_path
+from settings import bice_path
 
-_events_print = "All Events with missing localisation :" + "\n" * 5
-_ideas_print = "\n" * 5 + "All ideas with missing localisation :" + "\n" * 5
+_events_print = "All Events with missing localisation :" + "\n" * 3
+_ideas_print = "\n" * 5 + "All ideas with missing localisation :" + "\n" * 3
+_forbidden = ("{", "}", "/", '"', "has")
+_strings = ("name", "desc", "title")
 
 
 def _file_walk(path):
@@ -47,8 +49,8 @@ def _f_ideas(path):
 def hard_find(path, loc):
     for f in _file_walk(path):
         for line in f:
-            if any(s in line for s in strings):
-                if not any(s in line for s in forbidden):
+            if any(s in line for s in _strings):
+                if not any(s in line for s in _forbidden):
                     if line[line.find("=")+1:line.find("#")].strip() != "":
                         loc.append(line[line.find("=")+1:line.find("#")].strip())
 
@@ -72,9 +74,9 @@ def print_results(list1, list2, start):
 
 
 def localisation_check(path):
-    open('output.txt', 'w')
-    loc_path = path + 'localisation/'
-    event_path = path + 'events/'
+    open('localisation_check.txt', 'w')
+    loc_path = os.path.join(path, 'localisation')
+    event_path = os.path.join(path, 'events')
     idea_path = path + 'common/ideas'
     print_results(_f_events(event_path), _f_loc(loc_path), _events_print)
     print_results(_f_ideas(idea_path), _f_loc(loc_path), _ideas_print)
